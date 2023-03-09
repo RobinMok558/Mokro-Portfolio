@@ -1,4 +1,24 @@
 ---
-import Header from "../components/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const info = {
+  name: "Robin",
+  skills: ["React", "Astro", "Tailwind"],
+};
 ---
-<Header />
+
+<BaseLayout pageTitle="Home Page" />
+<div class="intro bg-clip-border bg-slate-100">
+  <p class="text-lg font-medium">
+    Hello! My name is {info.name} and I am an aspiring web developer studying Information
+    Technology on the side
+  </p>
+  <p class="text-lg font-medium">
+    I am currently studying for my Comptia A+ certification!
+  </p>
+</div>
+<div class="skills">
+  <h1 class="text-lg font-medium">My skills are:</h1>
+  <ul>
+    {info.skills.map((skill) => <li class="text-lg font-medium">{skill}</li>)}
+  </ul>
+</div>
